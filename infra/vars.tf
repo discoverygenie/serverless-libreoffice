@@ -5,3 +5,7 @@ variable "env" {
 variable "fn_name" {
   default = "convertToPDF"
 }
+
+variable "region" {
+  default = "us-east-2"
+}

@@ -1,7 +1,12 @@
 const {execSync} = require('child_process');
-const {S3} = require('aws-sdk');
+const AWS = require('aws-sdk');
 
-const s3 = new S3({region: 'us-east-1'});
+AWS.config.update({
+  accessKeyId: process.env.ACCESS_KEY,
+  secretAccessKey: process.env.SECRET_KEY,
+});
+
+const s3 = new AWS.S3({region: 'us-east-2'});
 
 /**
  * Uploads converted PDF file to S3 bucket
@@ -13,9 +18,9 @@ const s3 = new S3({region: 'us-east-1'});
 function uploadPDF(filename, fileBuffer) {
   const options = {
     Bucket: process.env.S3_BUCKET_NAME,
-    Key: `tmp/pdf/${filename}`,
+    Key: filename,
     Body: fileBuffer,
-    ACL: 'public-read',
+    ACL: 'private',
     ContentType: 'application/pdf'
   };
 

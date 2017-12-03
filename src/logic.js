@@ -2,7 +2,9 @@ const {writeFileSync} = require('fs');
 const {convertToPDF} = require('./libreoffice');
 const {uploadPDF} = require('./s3');
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const mb = 5 * 1024 * 1024;
+
+const MAX_FILE_SIZE = mb * 100;
 
 /**
  * Validate, save, convert and uploads file
