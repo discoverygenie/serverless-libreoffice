@@ -6,7 +6,7 @@ AWS.config.update({
   secretAccessKey: process.env.SECRET_KEY,
 });
 
-const s3 = new AWS.S3({region: 'us-east-2'});
+const s3 = new AWS.S3({region: 'us-west-2'});
 
 /**
  * Uploads converted PDF file to S3 bucket
@@ -15,13 +15,13 @@ const s3 = new AWS.S3({region: 'us-east-2'});
  * @param fileBuffer {Buffer} Converted PDF Buffer
  * @return {Promise.<String>} URL of uploaded pdf on S3
  */
-function uploadPDF(filename, fileBuffer) {
+function uploadPDF(filename, fileBuffer, contentType) {
   const options = {
     Bucket: process.env.S3_BUCKET_NAME,
     Key: filename,
     Body: fileBuffer,
     ACL: 'private',
-    ContentType: 'application/pdf'
+    ContentType: 'contentType',
   };
 
   return s3.upload(options)

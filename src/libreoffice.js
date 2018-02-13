@@ -2,7 +2,7 @@ const {execSync} = require('child_process');
 const {readFileSync} = require('fs');
 const path = require('path');
 
-const convertCommand = `./instdir/program/soffice --headless --invisible --nodefault --nofirststartwizard --nolockcheck --nologo --norestore --convert-to pdf --outdir /tmp`;
+const convertCommand = `./instdir/program/soffice --headless --invisible --nodefault --nofirststartwizard --nolockcheck --nologo --norestore --writer --convert-to pdf:writer_pdf_Export --outdir /tmp`;
 
 /**
  * Converts a document to PDF from url by spawning LibreOffice process
