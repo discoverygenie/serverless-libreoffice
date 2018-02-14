@@ -41,6 +41,4 @@ function uploadPDF(filename, fileBuffer) {
     });
 }
 
-module.exports = {
-  uploadPDF
-};
+module.exports = uploadPDF;
