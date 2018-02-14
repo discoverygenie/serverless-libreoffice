@@ -3,7 +3,7 @@ const libreOfficeFormats = [
   '.doc', '.doc', '.docx', '.dot', '.dxf', '.emf', '.eps', '.fhd',
   '.fodg', '.fodp', '.fods', '.fodt', '.gif', '.gnm', '.gnumeric', '.htm', '.html', '.hwp',
   '.jpeg', '.jpg', '.jtd', '.jtt', '.key', '.kth', '.met', '.mml', '.numbers', '.odb', '.odf',
-  '.odg', '.odp', '.ods', '.odt', '.pages', '.pbm', '.pcd', '.pct', '.pcx', '.pdb', '.pdf', '.pgm',
+  '.odg', '.odp', '.ods', '.odt', '.pages', '.pbm', '.pcd', '.pct', '.pcx', '.pdb', '.pgm',
   '.plt', '.png', '.pot', '.ppm', '.pps', '.ppt', '.pptx', '.psd', '.psw', '.pxl', '.ras',
   '.rtf', '.sda', '.sdc', '.sdd', '.sdp', '.sdw', '.sgf', '.sgl', '.sgv', '.slk', '.stc', '.std',
   '.sti', '.stw', '.svg', '.svm', '.swf', '.sxc', '.sxd', '.sxi', '.sxm', '.sxm', '.sxw', '.tga', '.tif',

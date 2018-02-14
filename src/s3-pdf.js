@@ -15,13 +15,13 @@ const s3 = new AWS.S3({region: 'us-west-2'});
  * @param fileBuffer {Buffer} Converted PDF Buffer
  * @return {Promise.<String>} URL of uploaded pdf on S3
  */
-function uploadPDF(filename, fileBuffer, contentType) {
+function uploadPDF(filename, fileBuffer) {
   const options = {
     Bucket: process.env.S3_BUCKET_NAME,
     Key: filename,
     Body: fileBuffer,
     ACL: 'private',
-    ContentType: 'contentType',
+    ContentType: 'application/pdf',
   };
 
   return s3.upload(options)
