@@ -42,19 +42,18 @@ module.exports.handler = (event, context, cb) => {
   }
   const s3Obj = event.Records[0].s3;
 
-  console.log('s3 Obj: ', s3Obj);
-  console.log('EVENT: ', event);
-  console.log('EVENT RECORD: ', event.Records[0].s3);
-  console.log('CONTEXT: ', context);
+  // console.log('s3 Obj: ', s3Obj);
+  // console.log('EVENT: ', event);
+  // console.log('CONTEXT: ', context);
   return getAttachmentFromS3(s3Obj)
     .then((response) => {
       // const {filename, base64File} = JSON.parse(s3Obj);
       // const test = new Buffer(fs.readFileSync('./test.pptx'), 'base64');
-      console.log('response', response);
+      // console.log('response', response);
 
       const [buffer, filename] = response;
 
-      console.log('buffer filename', buffer, filename);
+      // console.log('buffer filename', buffer, filename);
 
       return convertFileToPDF(buffer, filename)
         .then(pdfFileURL => {
